@@ -1,0 +1,6 @@
+# ignore node/grunt dependency directories
+node_modules/
+
+# ignore build and types directory
+build/
+types/

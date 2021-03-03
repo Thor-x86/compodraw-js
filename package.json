@@ -1,0 +1,59 @@
+{
+  "name": "compodraw",
+  "version": "1.0.0",
+  "description": "Compose with JSX or XML then draw to Canvas API",
+  "main": "build/compodraw.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "prepare": "cd tests/e2e && $npm_execpath install",
+    "pretty": "prettier --write \"./**/*.{ts,js,jsx,json}\"",
+    "build": "$npm_execpath run pretty && webpack build -c webpack.config.js && $npm_execpath run postbuild",
+    "patch": "cp -f build/compodraw.js tests/e2e/node_modules/compodraw/build/",
+    "postbuild": "$npm_execpath run patch && cd tests/e2e && $npm_execpath run build",
+    "pretest": "$npm_execpath run build",
+    "test": "$npm_execpath run test:unit && $npm_execpath run test:e2e",
+    "test:no-gpu": "$npm_execpath run pretest && $npm_execpath run test:unit && $npm_execpath run test:e2e:docker",
+    "test:unit": "jest --rootDir tests/unit",
+    "test:e2e": "cd tests/e2e && cypress run --headless",
+    "test:e2e:docker": "docker run -it -e NODE_ENV=production -v $PWD/tests/e2e:/e2e -w /e2e cypress/included:6.5.0; docker container prune -f",
+    "prepublishOnly": "yarn run test:no-gpu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thor-x86/compodraw-js.git"
+  },
+  "keywords": [
+    "html",
+    "html5",
+    "canvas",
+    "jsx",
+    "xml",
+    "customizable"
+  ],
+  "author": "Athaariq \"Thor-x86\" Ardhiansyah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Thor-x86/compodraw-js/issues"
+  },
+  "homepage": "https://github.com/Thor-x86/compodraw-js#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/react": "^17.0.2",
+    "compodraw-instructs": "^1.0.0",
+    "jest": "^26.6.3",
+    "jest-canvas-mock": "^2.3.1",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "ts-loader": "^8.0.17",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-canvas-mock"
+    ]
+  }
+}
