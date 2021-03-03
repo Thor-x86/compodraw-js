@@ -18,7 +18,7 @@ Instructs are bundled into one package, commonly wrapped with [UMD module](https
    ```bash
    npm install compodraw --save
    ```
-   or you can download the bundled JavaScript file for plain HTML or PHP project
+   or you can [download the bundled JavaScript](https://github.com/Thor-x86/compodraw-js/releases) file for plain HTML or PHP project
 2. Then pick your preferred `instructs package`.
    For basic operation, use [compodraw-instructs](https://github.com/Thor-x86/compodraw-js-instructs). If you want, you can build your own instructs package with each instruct is a [class](https://www.w3schools.com/js/js_classes.asp) that has at least `draw(canvasContext)` method
 3. That's it! now you can use CompoDraw 😁

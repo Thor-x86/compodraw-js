@@ -6,8 +6,8 @@ This method is suitable for other than React framework including PHP and plain H
 
 For this example, there is 3 files in a single folder:
 - `index.html` -> Your HTML file
-- `compodraw.js` -> CompoDraw bundled javascript file (Download link soon...)
-- `compodraw-instructs.js` -> bundled instructs package (Download link soon...)
+- `compodraw.js` -> CompoDraw bundled javascript file -- [download](https://github.com/Thor-x86/compodraw-js/releases)
+- `compodraw-instructs.js` -> bundled instructs package -- [download](https://github.com/Thor-x86/compodraw-js-instructs/releases)
 
 Then write this snippet code to `index.html`:
 
