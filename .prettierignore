@@ -7,3 +7,4 @@ types/
 
 # ignore self-tidy files
 tsconfig.json
+examples/
