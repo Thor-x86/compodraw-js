@@ -43,6 +43,10 @@ For other than React-based web project, you can still use XML data and compose i
 
 Embedding XML into HTML is now possible for CompoDrawJS. See [the example](https://github.com/Thor-x86/compodraw-js/blob/dev/examples/usage-with-dom.md).
 
+## Use only with JavaScript
+
+For logic-based composition, you can compose Instructs directly without `composeWith*` function. See [the example](https://github.com/Thor-x86/compodraw-js/blob/dev/examples/usage-programmatical.md).
+
 ## How to Contribute
 
 You are free to contribute by opening an issue or pull-request. But before pull-request, it's better to test your changes locally with this command:
