@@ -1,6 +1,6 @@
 {
   "name": "compodraw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compose with JSX or XML then draw to Canvas API",
   "main": "build/compodraw.js",
   "types": "types/index.d.ts",

@@ -5,12 +5,19 @@ import { Instruct } from "../interfaces";
  *
  * @param composed Typically a group of instructions
  * @param canvasDOM Targeted canvas element
+ * @param isResponsive Set to false if canvas behaves weird
  */
-export function draw(composed: Instruct, canvasDOM: HTMLCanvasElement): void {
+export function draw(
+  composed: Instruct,
+  canvasDOM: HTMLCanvasElement,
+  isResponsive: boolean = true
+): void {
   if (!canvasDOM) return;
 
-  canvasDOM.width = canvasDOM.clientWidth * window.devicePixelRatio;
-  canvasDOM.height = canvasDOM.clientHeight * window.devicePixelRatio;
+  if (isResponsive) {
+    canvasDOM.width = canvasDOM.clientWidth * window.devicePixelRatio;
+    canvasDOM.height = canvasDOM.clientHeight * window.devicePixelRatio;
+  }
 
   if (typeof canvasDOM.getContext === "function") {
     const canvasCtx = canvasDOM.getContext("2d");
